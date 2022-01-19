@@ -1,0 +1,93 @@
+JAVA 
+compilada
+interpretada
+fortemente tipada
+linguagem de alto nível
+executada em uma máquina virtual (JVM)
+
+JVM
+máquina virtual responsável pela tradução dos ByteCodes oriundos do compilador Javac(Java Compiler) em código de máquina de cada sistema operacional
+compila apenas uma vez, em .class, para qualquer sistema operacional, e as JVMs que interpretam pra cada sistema operacional
+
+responsável por:
+- execução das pilhas
+- gerenciamento e execução de memória
+-gerenciamento e execução das threads
+- otimização de código (compilação JIT - Just In Time)
+- Garbage Collector (GC) - responsável por limpar a memória "suja" oriunda do processo de alocação e desalocação da memória RAM
+
+JRE (Java Runtime Enviroment)
+é a JVM propriamente dita, responsável por executar os programas em Java
+
+JDK(Java Development Kit)
+utilitários que permitem o desenvolvimento de programas em Java e contém o JRE, isto é, a JVM, para executar os programas
+
+JAVADOC
+é uma ferramenta para documentação no formato HTML que se baseia nos comentários do código-fonte
+os comentários precisam conter tags para que a documentação fique legível
+
+Tags Javadoc 
+@author - especifica o autor da classe ou do método
+@deprecated - identifica classes ou métodos obsoletos
+@link - possibilita a definição de um link para um outro documento local ou remoto através de um URL 
+@param - descreve um parâmetro que será passado a um método
+@return - descreve qual o tipo de retorno de um método
+@see - associa a outras classes ou métodos
+@since - descreve a partir de quando uma classe ou método foi adicionado
+@throws - descreve os tipos de exceçoes que podem ser lançadas por um método
+@version - descreve a versão da classe ou método
+
+
+MÉTODO
+é uma porção de código (sub-rotina) que é disponibilizada por uma classe
+é executado quando é feita uma requisição a ele
+é responsavel por definir e realizar um comportamento
+
+padrão de definição de um método:
+-visibilidade(public, protected ou private)
+- tipo(concreto ou abstrato)
+- modificador(static ou final)
+- retorno(tipo de dado ou void)
+- nome
+-parametros(opcional)
+-exceçoes
+-corpo (codigo que possui ou vazio)
+
+Assinatura
+é a forma de identificar unicamente o método
+assinatura = nome + parâmetros
+
+Construtor
+método que cria objetos
+
+Destrutor
+método que auxilia na destruição de objetos
+
+Mensagem 
+ato de solicitar ao método que ele seja executado
+ela pode ser direcionada a um objeto ou a uma classe
+
+Passagem de parâmetros
+por valor(cópia)
+por referência(endereço)
+
+Boas Práticas
+-nomes devem ser descritivos, mas curtos
+-notação camelo
+-deve possuir entre 80 e 120 linhas
+-evitar listas longas de parametros
+-visibilidades adequadas
+
+Sobrecarga
+é a capacidade de definir métodos para diferentes contextos, mas preservando seu nome
+
+Retorno 
+é uma instrução de interrupção
+o tipo de retorno pode ser primitivo ou um objeto
+o tipo de dado de retorno deve ser compatível com o do método
+métodos sem retorno (void) podem ou não ter um "return" para encerrar sua execução
+o método executa seu retorno quando (o que ocorrer primeiro):
+-completa todas suas instruções internas
+-chega a uma declaração explícita de retorno
+-lança uma exceção
+

@@ -1,0 +1,70 @@
+GIT
+Git é um sistema de versionamento de código distribuído
+
+Benefícios:
+1- controle da versão
+2- armazenamento em nuvem
+3- trabalho em equipe
+4- melhorar seu código
+5- reconhecimento
+
+Navegação básica no terminal
+CLI - command line interface (Vs. GUI - graphic user interface)
+
+Comandos Windows  
+-cd (change directory) -> permite navegação entre as pastas
+cd .. -> sobe de nível
+cd / -> sobe até a raiz
+-dir -> lista diretórios/pastas
+-mkdir -> criar pasta 
+-del -> deleta arquivos
+-rmdir -> remover diretório + duas flags (/S / Q) -> pq???
+-cls (clear screen) -> limpa a tela 
+-echo - printa no terminal o texto digitado
+-echo texto > texto.txt --> cria um arquivo txt com o texto informado dentro dele
+
+Git por baixo dos panos
+-SHA1
+algoritmo de encriptação (Secure Hash Algorithm)
+a encriptação gera um conjunto de caracteres identificador de 40 dígitos
+é uma forma curta de representar um arquivo, o estado de um arquivo
+comando: openssl sha1 nomeDoArquivo.txt 
+-Objetos fundamentais
+1-blobs - contém os metadados do objeto (tipo, tamanho etc), bloco básico de composição
+2-trees - armazenam blobs, apontando para os blobs ou para outras árvores
+3-commits - junta tudo e dá sentido para a operação realizada, apontando para árvores, parentes(commit anterior), autor, mensagem e timestamp
+-Sistema distribuído - sistema que possui múltiplas cópias de si mesmo em diferentes locais
+-Segurança
+Chaves SSH e Tokens
+CHAVE SSH é uma forma de oferecer uma comunicação segura e encriptada entre duas máquinas
+Comandos para gerar chaves ssh 
+ssh-keygen -t ed25519(?) -c email@email.com
+
+Comandos GIT
+-git init -> inicia repositório no git
+-git add nomeDoArquivo-> dá início ao versionamento
+-git add * ou git add . -> adiciona tudo à versão
+-git commit -> realiza um commit
+-ls -> lista conteúdo dentro de uma pasta
+-ls -a -> mostra tbm os arquivos ocultos
+-git config --global user.email "nome@email.com"
+-git config --global user.name "Nome"
+-git status 
+-git remote add origin link.com.br 
+-git remote -v
+-git push origin master
+
+Ciclo de Vida dos Arquivos no GIT
+Arquivos podem ser:
+-untracked
+-tracked: unmodified, modified ou staged
+
+Identificar e Resolver conflitos de Merge
+manualmente
+
+quando vc gera commits no seu repositório local com email e name diferentes dos utilizados no github:
+os commits aparecerão com email e name diferentes no github
+
+
+
+Markdown é uma forma humanizada de escrever HTML sem escrever HTML de fato

@@ -1,0 +1,22 @@
+LINGUAGEM DE PROGRAMAÇÃO
+é uma escrita formal que especifica um conjunto de instruções e regras para gerar programas
+um software pode ser desenvolvido para rodar em um computador, dispositivo móvel ou em qualquer equipamento que permita sua execução
+a função das linguagens de programação é servir de um meio de comunicação entre computadores e humanos
+
+Alto nível
+a sintaxe se aproxima da linguagem humana e se distancia da linguagem da máquina 
+Baixo nível
+se aproxima da linguagem da máquina
+é preciso ter conhecimento direto da arquitetura do computador
+
+Compiladas
+linguagem em que o código fonte é executado diretamente pelo sistema operacional ou pelo processador, após ser traduzido por meio de um processo de compilação
+Ex.: c#, c++
+Interpretadas
+linguagem em que o código fonte é executado por um interpretador e em seguida é executado pelo sistema operacional ou processador
+ex.:JS, PHP, Python
+
+Portugol e o Pseudocódigo
+pseudolinguagem para preparar para trabalhar em qualquer linguagem de programação
+
+
