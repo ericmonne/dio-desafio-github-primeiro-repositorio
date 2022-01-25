@@ -1,0 +1,80 @@
+OPERADORES RELACIONAIS
+são símbolos especiais capazes de realizar comparações entre determinados operandos e, em seguida, retornar um resultado
+Tipos:
+-similaridade: igualdade, diferença
+-tamanho: maior, menor, maior igual, menor igual
+
+OPERADORES LÓGICOS
+símbolso especiais capazes de realizar comparações lógicas entre operandos lógicos ou expressões e, em seguida, retornar um resultado 
+operadores lógicos são os booleanos (true ou false)
+Tipos:
+1)conjunção
+operação lógica que só é verdadeira quando ambos os operandos ou expressões envolvidas são verdadeiros
+símbologia: && (and/e)
+2)disjunção
+operação que só é falsa quando ambos os operandos ou expressões envolvidos são falsos
+simbologia: || (or/ou)
+3)disjunção exclusiva
+operação que só é verdade quando ambos os operandos são opostos
+simbologia: ^ (xor)
+4)negação
+operação que inverte o valor lógico de um operando ou expressão
+simbologia: ! (inversão)
+
+operadores bitwise: & e | ---> mexe com bits de números inteiros; não são operadores lógicos
+operadores shift: ~, >>, >>>, <<  ---> ou inverte os bits do número ou mexe com os zeros à esquerda ou à direita; tb não são operadores lógicos
+
+Boas Práticas
+crie variáveis auxiliares para guardar resultados intermediários
+ex: 
+(salarioMensal<mediaSalario) && (qtdeDependentes >= mediaDependentes)
+(salarioBaixo) && (muitosDependentes)
+
+CONTROLE DE FLUXO
+estruturas que têm a capacidade de direcionar o fluxo de execução do código
+Tipos:
+1)Decisão
+estrutura que avalia uma condição booleana(lógica) ou variável para direcionr o fluxo de execução
+-if (não suporta expressões aritméticas?????)
+{} -> são opcionais em if de uma linha
+-if-else
+-if-else-if
+-switch (tipos mais comuns são int, Enum e String)
+-operador ternários -> deve ser evitado ao máximo, por uma questão de boa prática. Dificulta a legibilidade
+boas práticas:
+switch é para valores exatos (nao avalia booleanos) e if para expressões booleanas
+evitar usar o default do switch para "cases genéricos", e sim para valores inválidos, afim de evitar comportamentos inesperados
+evitar o efeito "flecha" dos if
+evitar muitos if aninhados
+diminuir o tamanho do if sempre que possível (ver exemplo linhas 27-31)
+2)Repetição
+-for
+-while
+-do while
+3)Interrupção
+-break
+-continue
+-return
+
+BLOCOS DE EXECUÇÃO 
+é um grupo de 0 ou mais códigos que trabalham em conjunto para executar uma operação
+Tipos:
+1) locais 
+dentro de métodos
+{ ... }
+2) estáticos
+dentro de classes
+3) instância
+dentro de classes
+
+GERAL
+c1>i1
+! corresponde à operação lógica inversão
+como o if tem só uma linha, {} são opcionais
+o texto mentira deve ser exibido
+true || false é true
+if não suporta expressões aritméticas
+"switch avalia expressões booleanas" (incorreto afirmar)
+igualdade e menor
+"= é o operador de igualdade"(incorreto  afirmar)
+(10>15) && true(???)

@@ -1,0 +1,219 @@
+POO X Paradigma Estruturado 
+PE: 
+representação mais simplista
+foca em operações/funções e dados (brutos)
+foco maior em "como fazer"
+baixo nível
+
+POO: 
+representação mais realista
+foco na modelagem de entidades e nas interações entre estas 
+foco maior em "o que fazer"
+foco em entidades que procurem representar o mundo real
+
+VANTAGENS POO
+-melhor coesão (unidades de código com responsabilidades bem definidas)
+-melhor acoplamento (bons acoplamentos são flexíveis (na PE eles são mais rígidos))
+-diminuição do gap semântico (diferença de representação entre o mundo real e o computacional)
+-coletor do lixo(limpar a memória do pc, diminuindo erros e melhorando a performance do software)
+
+Definição
+paradigma de análise, projeto e programação de sistemas de software baseado na composição e interação entre diversas unidades de software chamadas de objetos
+
+Fundamentos/Pilares
+1)Abstração
+processo pelo qual se isolam características de um objeto, considerando os que tenham em comum certos grupos de objetos 
+preocupação com os elementos essenciais, não acidentais
+2)Reuso
+capacidade de criar novas unidades e código a partir de outras já existentes
+3)Encapsulamento
+capacidade de esconder complexidades e proteger dados
+
+Estruturas Básicas da POO:
+-Classe 
+unidade básica de implementação do POO
+estrutura que abstrai um conjunto de objetos com características similares
+define o comportamento de seus objetos através de métodos e os estados possíveis dos objetos através de atributos 
+descreve os serviços providos pelos objetos e quais informações eles podem armazenar
+sua finalidade é servir de molde para o conceito do mundo real
+pode se referir a coisa abstrata ou concreta
+é coisa estática, que só funciona a partir dos objetos, que estarão na memória do computador
+ex.:bola, carro, venda, viagem, comprador, computador 
+dicas:
+substantivos
+nomes significativos
+contexto deve ser considerado 
+
+-Atributo
+é o elemento de uma classe responsável por definir sua estrutura de dados
+o conjunto de atributos será responsável por representar suas características e fará parte dos objetos criados a partir da classe
+não existe na PE
+Atributo: o que é próprio e peculiar  alguém ou a alguma coisa
+é criado dentro da classe
+Variável: sujeito a variações ou mudanças, que pode variar, inconstante, instável
+existe na POO dentro de métodos
+Dicas:
+substantivos e adjetivos
+nomes significativos
+contexto deve ser considerado
+abstração 
+tipos adequados
+
+-Método 
+é uma porção de código(sub-rotina) disponibilizada pela classe
+é executado quando é feita uma requisição a exceçoes
+serve para identificar quais serviços(ações) que a classe oferecer
+é responsável por definir e realizar um determinado comportamento
+ex: ligar, calcular total, realizar troca, desligar
+Criação Java e C#:
+visibilidade
+retorno
+nome
+parametros
+Criação Python:
+def (palavra reservada)
+nome
+parametros
+Dicas:
+verbos
+nomes significativos
+contexto deve ser considerado
+Métodos Especiais: (2)
+1 - Construtor
+constrói objetos 
+a partir dele a gnt cria objeto para a classe
+2-Destrutor
+class Nome { void finalize()}
+auxilia a destruição do objeto (coletor de lixo)
+é uma boa prática
+ser feito se precisar liberar algum recurso que o objeto possa estar usando, se não, não precisa do destrutor 
+Sobrecarga: mudar a assinatura(no caso só o parâmetro) do método de acordo com a necessidade 
+sobrecarga não existe em Python(interpretada e dinâmica X compilada e estática (c# e java))
+
+-Objeto 
+representação de um conceito/entidade do mundo real que pode ser física ou conceitual e possui um significado definido para um determinado software
+p/ essa entidade, deve ser definida anteriormente uma classe a partir da qual posteriormente serão instanciados objetos distintos
+objeto é a instanciação da classe 
+
+-Mensagem
+é o processo de ativação de um método de um objeto 
+ocorre quano uma requisição(chamada) a esse método é realizada, disparando a execução de seu comportamento descrito pela classe 
+pode ser direcionada diretamente à classe caso a requisição seja a um método estático
+Criação:
+Carro carro = new Carro(); (criação do objeto)
+carro.método;
+
+Instância x Estático: duas formas em que os métodos podem se comportar 
+
+
+RELAÇÕES
+Conceitos que ajudam a criar entidades a partir de outras entidades
+
+1)Herança
+relacionamento entre classes em que uma subclasse(filha, derivada) é uma extensão de uma superclasse(pai,mãe,base)
+devido a isto, a subclasse consegue reaproveitar os atributos e métodos da superclasse 
+além dos que venham a ser herdados, a subclasse pode definir eus próprios membros
+serve para criar subtipos
+ajuda no reuso, mas é possível reuso sem herança
+Criação
+Java: class A extends B {}
+C#: class A : B {}
+Python: class A(B):
+Tipos de Herança:
+-simples
+a subclasse tem só uma superclasse
+cada classe herda de apenas uma classe
+-múltipla 
+a subclasse tem mais de uma superclasse
+existe em Python e C++, mas não Java e C#
+Upcast 
+subindo o tipo de dado: subclasse (B)-> superclasse(A)
+da mais especíica para a mais genérica 
+criação: Super a = new Sub();
+é implícito
+é útil e deve ser utilizado sempre que possível
+Downcast
+descendo o tipo de dado: superclasse -> subclasse 
+da mais genérica pra mais específica
+criação: Sub a = (Sub) new Super();
+é explícito
+costumam dar erro de compilação ou execução da aplicação
+A)Polimorfismo
+a mesma ação(método), comportando-se diferente
+B)sobrescrita
+a mesma ação _podendo_ se comportar diferente
+
+2)Associação
+possibilita um relacionamento entre classes/objetos no qual estes possam pedir ajuda a outras classes/objetos e representar de forma completa o conceito ao qual se destinam
+nesse tipo de relacionamento, as classes e os objetos interagem entre si para atingir seus objetivos
+Tipos:
+A)Estrutural
+a associação se manifesta na estrutura(atributos)
+-composição:"Com Parte Todo" - a parte só existe com o todo 
+ex: pessoa e endereço (a pessoa tem um endereço e o endereço só existe com ela)
+-agregação: "Sem Parte Todo - a parte pode existir sem o todo 
+ex: aluno e disciplina (aluno e disciplina podem existir um sem o outro)
+B)Comportamental 
+a associação se manifesta nos comportamentos(métodos)
+-dependência: "Depende de"
+ex: compra  e cupom (o método Finalizar da classe compra pode usar um cupom, então vai precisar dele) -> cupom entra como parâmetro
+
+Herança: uma coisa é outra
+X 
+Associação: uma coisa usa a outra
+
+3)Interface 
+define um contrato que deve ser seguido pela classe que a implementa
+quando uma classe implementa uma interface, ela se compromete a realziar todos os comportamentos que a interface disponibiliza 
+seus métodos não possuem corpo
+Criação
+Java: class B implements A {}
+C#: class B: A{}
+Python: não tem interface
+
+
+ORGANIZAÇÃO
+Conceitos que organizam OO:
+1)PACOTES 
+organização física ou lógica criada para separar classes com responsabilidades distintas
+para que a aplicação fique mais organizada e seja possível separar classes de finalidade e repreentatividades diferentes
+Criação:
+Java: 
+package ...;
+import ...;
+C#: 
+namespace {...}
+using ...;
+Python:
+__init__.py -> é preciso esse arquivo até as versões 2.x para o python identificar q aquilo é um pacote, mas a partir da 3.0 não é necessário
+from...
+import...
+
+
+2)VISIBILIDADES 
+modificadores de acesso
+têm como finalidade determinar até que passe uma classe, atributo ou método pode ser usado 
+sua utilização é fundamental para o uso efetivo da OO 
+algumas boas práticas e conceitos só são atingidos com o uso correto deles
+Tipos:
+A)PRIVATE 
+mais restritiva
+só dentro da classe 
+B)PROTECTED 
+dentro da classe, no mesmo pacote e subclasses
+tem forte relação com herança
+C)PUBLIC 
+em qualquer lugar
+Python: tudo é público
+
+GERAL:
+objetos são instâncias de métodos e atributos(marque o incorreto)
+métodos são ações/serviços que as entidades podem oferecer
+associação pode ocorrer em atributos e métodos
+pacotes servem para separar classes
+classes podem não possuir atributos, métodos ou ambos 
+atributos têm como finalidade representar as características das entidades do mundo real
+herança é uma relação entre classes 
+interface é uma forma de abstrair implementações, mas criar acordos de comunicação 
+sobrecarga de métodos: p/ ocorrer, criam-se novos métodos com o mesmo nome, mas com parâmetros diferentes
+um método privado só é acessível dentro da classe onde é definido 

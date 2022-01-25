@@ -1,0 +1,46 @@
+Domínio:
+considerando nosso conhecimento no domínio bancário, abstrair uma solução OO em Java 
+Problema:
+um banco oferece a seus clientes dois tipos de contas (corrente e poupança),
+as quais possuem as funcionalidades de 
+depósito, saque e transferência(entre contas da própria instituição)
+
+
+
+PILARES para a resolução do desafio
+
+Abstração:
+habilidade de se concentrar nos aspectos essenciais de um domínio, ignorando características menos importantes ou acidentais
+nesse contexto, objetos são abstrações de entidades existentes no domínio em questão
+
+Encapsulamento
+esconder a implementação dos objetos, criando assim interfaces de uso mais concisas e fáceis de usar/entender
+favorece dois aspectos de um sistema: manutenção e evolução
+tem relação com getters/setters, mas é mais do que isso 
+
+Herança
+Permite que define subclasse que herda/reutiliza/estende/modifica o comportamento da superclasse
+superclasse/classe base - subclasse/classe derivada
+DRY - Don't Repeat Yourself
+
+Interface 
+é uma classe abstrata  com todos os métodos abstratos
+obrigado todos que a implementam a implementar todos os métodos abstratos, delegando para essas classes a responsabilidade por definir os métodos
+
+Classe Abstrata 
+não pode ser instanciada (ex.: Conta é abstrata, pq assim obriga a definir se a conta será Conta Corrente ou Conta Poupança)
+
+Polimorfismo
+capacidade um objeto poder ser referenciado de várias formas 
+capacidade de tratar objetos criados a partir das classes específicas como objetos de uma classe genérica
+o objeto não fica se transformando ou mudando de tipo, apenas se muda a forma de referenciar o objeto
+
+
+Desafio de Projeto 
+sugestões:
+estender o domínio 
+incluir novas classes, atributos e/ou métodos 
+método que liste clientes
+incluir lombok?
+
+

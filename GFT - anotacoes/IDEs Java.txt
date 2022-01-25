@@ -1,0 +1,83 @@
+Fases da Execução Java
+1. escrever o código fonte (arquivo com a extensão .java)
+2. JDK compila o código fonte e gera o arquivo bytecode (arquivo com a extensão .class)
+3. a JVM lê o arquivo compilado e as bibliotecas padrão do Java que estão no JRE
+
+IDE 
+ambiente de desenvolvimento integrado 
+provê um ambiente de desenvolvimento completo, visando o ganho de produtividade e sinergia com os principais padrões e convenções do mercado
+fotware que combina ferramentas comuns de desenvolvimento em uma única GUI, facilitando o desenvolvimento de aplicações
+
+Eclipse
+IDE para desenvolvimento Java, mas suporta outras linguagens
+feito em Java e segue o modelo open source
+
+IntelliJ IDEA 
+IDE escrita em Java 
+2 edições: comunidade licenciada Apache 2 e comercial proprietária
+
+outras IDEs: VSCODE, NETBEANS etc.
+
+
+ATALHOS Eclipse
+main ctrl espaço
+sysout ctrl espaço
+alt shift s p/ aparecer generate
+ctrl d para apagar linha
+ctrl s para salvar
+ctrl 3 p/ aparecer opções
+ctrl + aumenta fonte
+ctrl - diminui fonte
+ctrl / ou ctrl shift c comenta
+ctrl shift o importa classe/pacote
+ctrl shift f para identar
+
+Eclipse
+build path -> configure build path
+mostra o caminho da build?
+
+ATALHOS IntelliJ
+alt insert p/ gerar classe nova
+ctrl shift f10 indica q tem um metodo main e roda o programa
+shift f10 roda o programa de novo
+alt insert para generate
+ctrl / ou ctrl shift / para comentar
+alt enter pra fazer o import
+ctrl alt o apaga imports desnecessários
+shift f6 pra renomear
+ctrl alt l identar
+ctrl d duplica
+ctrl y deleta
+ctrl shift seta para mover uma linha
+ctrl shift k para push
+ctrl f4 fecha aba
+ctrl n procura uma classe para abrir
+ctrl b abre uma classe 
+
+VSCODE 
+tbm serve pra Java
+
+
+Java JDK
+é um kit de desenvolvimento Java que inclui tudo o que é necessário para a construção de soluções nessa linguagem de programação
+
+Edições da Distribuição Java
+SE(Standard Edition)
+EE(Enterprise Edition)
+ME(Micro Edition)
+
+JRE 
+ambiente de Execução multiplataforma que fornece as bibliotecas padrões do Java para o JDK compilar seu código e a JVM executá-lo posteriorente
+
+JVM
+maquina virtual do Java responsável por executar o bytecode(.class)
+
+Outras linguagens da plataforma Java:
+Groovy
+Jython
+JRuby
+
+JAVA 
+principal vantagem:
+- não depender de apenas um único software ou hardware, podendo ser emulada por uma máquina virtual
+

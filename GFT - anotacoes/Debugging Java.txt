@@ -1,0 +1,75 @@
+DEBUGGING/DEPURAÇÃO
+processo de encontrar e corrigir bugs
+linguagens de alto nível tornam a depuração mais fácil pois fornecem mais ferramentas para identificar erros, como o tratamento de exceções
+
+os depuradores funcionam assumindo o controle do tempo de execução de um programa e permitindo que vc o observe e controle
+p/ fazer isso, ele mostra a pilha do programa e permite que você a atravesse em qualquer direção
+quando vc está em um depurador, obtém uma imagem mais completa de um quadro de pilha do que quando olha os rastreamentos de pilha em uma mensagem de log
+
+pode ser usado pra fazer o tratamento de exceção
+
+CATEGORIAS DE ERRO
+
+1)Erros de Sintaxe
+é um erro nas regras estabelecidas da linguagem:
+em geral, não exige debugging: a IDE mostra o erro
+a) parênteses, chaves, colchetes que abrem, mas não fecham;
+b) duas instruções sem um ponto-e-vírgula entre elas;
+c)uma palavra-chave sendo usada numa posição inesperada
+
+2)Erros de Semântica
+erro na lógica do código
+o código está sintaticamente correto, porém não faz o que se esperava dele
+a)tentar dividir um número por uma String ou por zero;
+b)atribuir um valor incoerente a um tipo de dado 
+c)tentar fechar um arquivo que não foi aberto
+
+PILHA DE EXECUÇÃO JAVA/STACK TRACE 
+
+Pilha de Execução
+toda invocação de método é empilhada em uma estrutura de dados que isola a área de memória de cada um 
+quando um método termina, ele volta para o método que o invocou 
+
+Stack Trace 
+é a matriz onde encontramos a pilha de execução da exceção
+o rastreamento da pilha busca (rastreio) para a próxima linha onde a exceção pode surgir 
+
+Thread.dumpStack();
+imprime a stack trace da track que tá acontecendo
+deve ser lida de baixo para cima
+quando chega no método que a chamou, começa a desempilhar a sequência que levou até ela 
+
+DEBUGGING IDE INTELLIJ
+F8- step over: pular de linha
+F7- step into: entrar no método e ver o que tá acontecendo nele
+alt shift F7 - force step into
+shift F8- step out: sair do método sem finalizar a inspeção dele
+alt shift 9- run to cursor: acelerar a execução 
+alt shift 8- evaluate expression: simular expressões
+permite colocar vários breakpoints
+aba variables mostra o que já foi executado
+shift F9 - debug
+F9 - resume program - interromper o Debug e fazer com que a execução prossiga até o final ou próximo breakpoint 
+
+DEBUGGING IDE ECLIPSE
+aba variables mostra o que já foi executado
+F5- step into
+F6- step over 
+F7- step return 
+drop to frame
+ctrl F2 - terminate 
+shift F5 - use step filters
+breakpoint properties -> conditional -> adicionar uma condição para o breakpoint parar (exemplo: quando um laço for chegar a i = 3)
+
+GERAL 
+executar a opção debug as (intellij)
+a principal funcionalidade da ferramenta de debug é depurar a execução linha a linha do programa
+atalhos debug INTELLIJ: debug(shift f9), step over(f8) step into(f7)
+evaluate expresssion: ferramenta que provê acabamento de código como no editor, desta maneira é muito fácil introduzir qualquer expressão
+Apenas III está correta 
+stack trace é a matriz onde encontramos a pilha de execução da exceção 
+breakpoint: indicar o ponto de parada para fazer o debug 
+variables: view onde são exibidas as variáveis
+INTELLIJ: F9 - resume program - interromper o Debug e fazer com que a execução prossiga até o final ou próximo breakpoint
+debugar o código: depurar o código
+

@@ -1,0 +1,78 @@
+VARIÁVEL
+espaço na memória do pc onde se podem guardar valores
+4 tipos:
+-instância - pertence ao objeto
+-classe - pertence à classe
+-local - dentro de métodos
+-parâmetro - na assinatura do método
+
+Criação
+Padrão de definição
+visibilidade modificador tipo nome valorInicial;
+Visibilidade: (opcional)
+public, protected e private
+Modificador:(opcional)
+static e final
+Tipo (obrigatorio)
+tipo de dado
+Nome (obrigatorio)
+nome que é fornecido à variável 
+Valor Inicial (opcional)
+um valor inicial opcional
+
+Convenções e regras no nome
+-não começar com numeros(regra) -> erro de compilação
+-evitar $ e _ (convenção)
+-caracteres especiais são proibidos - erro de compilação
+-case-sensitive
+-sem espaço
+-não pode ser palavra reservada
+
+Boas práticas
+-sempre começar com letra minúscula
+-nomes expressivos
+-notação camelo
+-quando constante(final) maiúscula e separada por "_"
+
+
+TIPOS DE DADOS
+são os valores e, consequentemente, operações que as variáveis podem assumir e sofrer, respectivamente
+Tipificação:
+Estática(forte) Vs Dinâmica(fraco)
+estática: definida previamente
+dinâmica: definição não é obrigatoria na criação, o programa a define na hora da compilação
+Primitivo Vs Composto
+primitivo: básicos, atômicos e homogêneos -> valores numéricos, textuais
+composto: ligado à orientação a objeto 
+String não é tipo primitivo
+
+Opções de tipos:
+textual (char, string)
+numeral (byte, short, int, long, float, double)
+lógico (boolean) - não aceita null
+objeto
+
+
+OPERADORES
+São símbolos especiais que são capazes de realizar ações sobre operandos para retornar um resultado final
+
+Tipos:
+pós-fixado: expressao++ expressao--
+prefixado: ++expressao --expressao
+aritmético: + - * / %
+atribuição: = += -+ *= /= %=
+
+int i = ++k --> i = k+1
+int j = k-- --> j=k; k=k-1
+
+atribuições possuem a menor precedência
+pós-fixado tem precedência sobre pré-fixado, ambos têm sobre aritmeticos
+
+CONVERSÕES/CASTING
+casting é a transformação de uma determinada variável de tipo menos específico para um tipo mais específico ou vice-versa
+tipos:
+upcast(implícito) -> promoção de um tipo de dado de menor capacidade de armazenamento para um tipo maior 
+downcast(explícito)
+
+float default não é 0.0d
+

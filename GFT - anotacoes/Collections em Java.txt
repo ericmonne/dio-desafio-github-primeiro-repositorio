@@ -1,0 +1,262 @@
+COLLECTIONS FRAMEWORK
+
+COLLECTION/COLEÇÃO
+é um objeto que agrupa múltiplos elementos(variáveis primitivas ou objetos) dentro de uma única unidade
+serve para armazenar e processar conjuntos de dados de forma eficiente
+antes do Java2 JDK1.2, a implementação de coleções na linguagem Java incluía poucas classes e não tinha a organização de um framework 
+
+COMPOSIÇÃO de COLLECTIONS
+a)Interfaces: 
+é um contrato que quando assumido por uma classe deve ser implementado 
+b)Implementações ou classes:
+são as materializações, a codificação das interfaces
+c)Algoritmos:
+sequencia lógica, finita e definida de instruções que devem ser seguidas para resolver um problema 
+
+LISTAS 
+interface list fica dentro do pacote java.util.List
+permite elementos duplicados
+garante ordem de inserção
+A)Vector
+tem a ver com threads
+
+B)ArrayList
+na dúvida, escolher ArrayList
+deve ser usado onde mais operações de pesquisa são necessárias
+usa um array para armazenar os elementos inseridos
+mais difícil para excluir elementos 
+implementa apenas a interface list
+
+C)LinkedList
+deve ser usado onde mais operações de manipulação de dados, como inserção e exclusão, são necessárias
+usa lista duplamente ligada para armazenar os elementos inseridos 
+mais fácil para excluir elementos
+implementa 2 interfaces: list e queue
+
+ARRAYLIST 
+List<Tipo> nome = new ArrayList<>();
+ArrayList<Tipo> nome = new ArrayList<>(); --> não é recomendado em geral, pq não se dirige para a interface assim, mas para a implementaçãi
+List<Tipo> nome = new ArrayList<>(Arrays.asList(dado, dado2, dado3))
+List<Tipo> nome = Arrays.asList(dado, dado1, dado2, dado3); -> adicionar elementos na instanciação da lista, mas não permite adicionar ou retirar elementos dentro dela --> erro de compilação
+List<Tipo> nome = List.of(dado, dado1, dado2); --> também torna a lista imutável, não permitindo adicionar ou remover --> a propria IDE avisa do erro 
+.add(dado) -> adicionar elementos ao final, pode tbm passar a posição (1º a posição, dps o elemento)
+.remove(posicao) -> remover dados pela posição
+.remove(dado) -> remover dado pelo valor
+.indexOf -> vc passa o objeto e ele retorna a posição 
+.set(nome.indexOf(dadoAntigo), dadoNovo) -> substituir um elemento por outro
+.contains(dado) -> retorna um boolean pra saber se tem um elemento específico na lista
+.get(posição) -> passa a posição e recebe o elemento
+Collections.min(nome) --> retorna o menor valor da ArrayList
+Collections.max(nome) -> retorma o maior valor
+.iterator() --> percorre os membros da lista 
+-tbm pode ser resolvido sendo depositado em uma variável: Iterator<Tipo> iterator = notas.iterator();
+.hasNext() --> tem próximo valor
+.next() -> próximo valor 
+.size() -> retorna a quantidade de elementos dentro da lista
+.clear() -> apaga toda a lista 
+.isEmpty() -> retorna um boolean informando se a ArrayList está vazia
+Collections.shuffle(nome) -> emmbaralha a lista 
+Collections.sort(nome) -> organiza os elementos da lista (ver comparable e comparator)
+
+
+COLEÇÕES SINGULARES SET 
+a interface set encontra-se no pacote java.util.Set 
+não permite elementos duplicados (!= List)
+não possui índice(!=List) -> não dá pra fazer pesquisas que precisem de índice 
+
+A)HashSet 
+utiliza HashMap para armazenar elementos 
+não mantém ordem de elementos
+não permite buscar posição, pois os elementos são organizados em ordem aleatória
+melhor performance
+no máximo um null
+
+B)LinkedHashSet
+utiliza LinkedHashMap para armazenar elementos
+mantém ordem de inserção de elementos
+performance intermediária
+no máximo um null
+
+C)TreeSet
+utiliza TreeMap para armazenar elementos
+mantém a ordem default natural de ordenação dos elementos 
+perfomance pior 
+não permite elemento null 
+
+HASHSET 
+Set<Tipo> nome= new HashSet<>()
+Set<Tipo> nome= new HashSet<>(Arrays.asList(dado, dado1, dado2, dado3))
+nome.contains(dado) -> retorna um boolean que informa se contém o dado na lista 
+Collections.min(nome) -> exibe o menor valor 
+Collections.max(nome) -> exibe o maior valor
+Também aceita iterator para percorrer os valores 
+nome.size() -> retorna a quantidade de dados
+.remove() -> remove um dado
+.add() -> adiciona um dado
+.clear() -> apaga todo o conjunto 
+.isEmpty() -> retorna boolean que informa se há dados no conjunto
+
+para colocar um HashSet/LinkedHashSet em ordem crescente:
+Set<Tipo> nome1= new HashSet<>()/LinkedHashSet<>();
+Set<Tipo> nome2= new TreeSet<>(nome1);
+
+É muito importante usar equals e hashcode quando usamos elementos hash 
+
+
+MAP - Coleções de Pares 
+java.util.Map
+não estende da interface collection 
+elementos únicos (key) para cada valor (value)
+pares chave-valor 
+chaves têm que ser únicas, mas valores podem se repetir 
+não existe metodo .add
+
+A)HashTable
+um pouco fora de uso 
+
+
+B)TreeMap
+são muito utilizadas para comparação e ordenação 
+performance inferior
+armazena os elementos pela ordem natural
+não permite chaves nulas
+implementa Map, SortedMap e Navigable Map
+não é sincronizável
+utiliza arvore
+
+C)HashMap
+performance superior
+armazena os elementos aleatoriamente
+permite chaves nulas
+implementa Map 
+não é sincronizável
+utiliza list of bucket
+
+D)LinkedHashMap(estende HashMap)
+armazena os elementos de acordo com a ordem de inserção
+permite chaves nulas
+implementa Map
+não é sincronizável
+utiliza double linked list of buckets
+
+Métodos Map
+Map<TipoChave, TipoValor> nome = new HashMap<>();
+Map<TipoChave, TipoValor> nome = new HashMap<>(){{
+    put(chave1, valor1);
+    put(chave2, valor2);
+}}
+.put(chave, dado) -> adiciona elementos
+.put(chaveExistente, dadoNovo) -> muda elementos 
+.containsKey(chave) -> retorna um boolean para descobrir se um dado está presente no dicionário/mapa 
+.get(chave) -> recebe a chave e retorna o valor
+.keySet() -> retorna um set com as chaves 
+.values() -> retorna uma collection que exibe os valores
+Collections.max(nome.values()) -> retorna uma collection com o maior valor 
+Collections.min(nome.values()) -> retorna o menor valor 
+.entrySet() -> retorna um set e os elementos dentro desse set são do tipo entry
+---> Set<Map.Entry<TipoChave, TipoValor>> nomeEntries = nome.entrySet();
+.getKey() -> retorna a chave 
+.getValue()->retorna o valor
+.clear() -> remover tudo
+.isEmpty() -> retorna um boolean que informa se está ou não vazio 
+
+
+STREAM API
+ajudar na manipulação de collections 
+
+A)CLasse Anônima
+classe que não recebeu um nome e é declarada e instanciada em uma única instrução 
+deve ser usada quando precisa criar uma classe que será intanciada apenas uma vez 
+ex: declarar classe dentro do argumento do método 
+meusGatos.sort(new Comparator<Gato>(){
+    @Override
+    public int(compare(Gato g1, Gato g2){
+        return Integer.compare(g1.getIdade(), g2.getIdade());
+    }
+})
+
+B)Functional Interface 
+qualquer interface com SAM(Single Abstract Method)
+sua implementação pode ser tratada como expressões lambda
+pode ou não ter uma annotation @FunctionalInterface
+ex: @FunctionalInterface ---> com annotation
+public interface Comparator<T>{
+    @Contract(pure=true) int compare(T var1, T var2);
+}
+ex: public interface ActionListener extends EventListener{
+    void actionPerformed(ActionEvent var1)
+} ---> sem annotation
+
+Interfaces funcionais mais importantes pra essa aula:
+-Comparator
+-Consumer
+-Function 
+-Predicate
+
+C)Função Lambda 
+é uma função sem declaração
+isto é, não é necessário colocar nome, tipo de retorno e o modificador de acesso 
+a ideia é que o método seja declarado no mesmo lugar em que será usado 
+simplificação de uma classe anônima
+sintaxe: (argumento) -> (corpo)
+ex: sem lambda:
+meusGatos.sort(Comparator.comparing(new Function<Gato, String(){
+    @Override
+    public String apply(Gato gato){
+        return gato.getNome();
+    }
+}));
+ex: com lambda:
+meus gatos.sort(Comparator.comparing((Gato gato) -> gato.getNome()))
+
+D)Reference Method 
+recurso que permite fazer a referência a um método ou construtor de uma classe(de forma funcional)
+e assim inficar que ele deve ser utilizado num ponto específico do código
+deixando-o mais simples e legível
+para utilizá-lo: informar uma classe ou referência seguido de "::" e o nome do método sem parênteses no final 
+é uma forma de simplificar uma expressão lambda 
+ex: (para versão sem Reference Method, ver linha 209)
+meusGatos.sort(Comparator.comparing(Gato::getNome));
+
+E)STREAM APIS
+nova opção para a manipulação de coleções em Java seguindo os princípios da programação funcional
+combinada com as expressões lammbda, proporciona uma forma diferente de lidar com conjuntos de elementos 
+oferecendo ao desenvolvedor uma maneira simples e concisa de escrever código 
+que resulta em facilidade de manutenção e paralelização sem efeitos indesejados em tempo de execução
+
+Source -> Pipeline(operações intermediárias) -> Terminal
+
+OPERAÇÕES STREAM 
+2 tipos de operações:
+a)intermediárias
+retornam uma stream 
+podem ser encadeadas
+
+b)terminais 
+retornam um objeto ou um valor
+são utilizadas isoladamente
+
+Operações
+.stream().forEach(s -> sout(s))
+.stream().limit()
+.stream().limit().collect(Collectors.toSet).
+.stream().map(Integer::parseInt).collect(Collectors.toList)
+.stream().map(Integer::parseInt).filter()
+.map() -> ta fazendo a conversão
+.stream().average().ifPresent(System.out::println)
+.stream().mapToInt(Integer::parseInt).average()
+.removeIf()
+
+
+GERAL 
+list, set e queue estendem diretamente da interface Collection 
+operação .map() converte cada elemento recebido em um outro objeto, de acordo com a função passada
+Map.put(key,value)  -> método utilizado para adicionar ou atualizar um elemento em um map
+sout(numeros.stream().mapToInt(Integer::parseInt).average())
+List: permite inserção de elementos duplicados e obrigatoriamente garante a ordem de inserção
+Coleção: objeto que abrupa múltiplos elementos dentro de uma única unidade
+ordem de performance set: HashSet > LinkedHashSet > TreeSet
+amarelo, azul, branco, verde
+é possível ordenar um Map pelo valor
+c m l c v l c n t
+

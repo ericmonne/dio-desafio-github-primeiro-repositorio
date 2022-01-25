@@ -42,16 +42,18 @@ MÉTODO
 é uma porção de código (sub-rotina) que é disponibilizada por uma classe
 é executado quando é feita uma requisição a ele
 é responsavel por definir e realizar um comportamento
+podem ser utilizados sem ser a partir de classes
 
 padrão de definição de um método:
 -visibilidade(public, protected ou private)
 - tipo(concreto ou abstrato)
 - modificador(static ou final)
 - retorno(tipo de dado ou void)
-- nome
+- nome (obrigatório)
 -parametros(opcional)
 -exceçoes
 -corpo (codigo que possui ou vazio)
+os parênteses NÃO SÃO opcionais na criação de um método
 
 Assinatura
 é a forma de identificar unicamente o método
@@ -80,6 +82,9 @@ Boas Práticas
 
 Sobrecarga
 é a capacidade de definir métodos para diferentes contextos, mas preservando seu nome
+alterar os parâmetros do método
+quanto mais complexa a aplicação, maior a necessidade de sobrecargas
+
 
 Retorno 
 é uma instrução de interrupção

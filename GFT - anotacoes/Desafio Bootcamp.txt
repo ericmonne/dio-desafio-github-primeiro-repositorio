@@ -1,0 +1,7 @@
+POO
+é um modelo de desenvolvimento de aplicações
+sendo este odelo construído acerca do conceito de objetos
+
+Domínio da Aplicação 
+lugar da aplicação onde ficam as classes que descrevem o problema
+
