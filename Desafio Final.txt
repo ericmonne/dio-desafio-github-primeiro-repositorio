@@ -1,0 +1,55 @@
+PADRÕES DE PROJETO JAVA
+são soluções consolidadas para problemas recorrentes no desenvolvimento e manutenção de softwares orientado a objetos
+
+Comumente classificados nas seguintes categorias:
+a)Padrões Criacionais
+-abstract factory
+-builder
+-factory method
+-prototype
+-singleton
+b)Padrões Comportamentais
+-chain of responsibility
+-iterator
+-observer
+-strategy
+-template method
+c)Padrões Estruturais
+-adapter
+-bridge
+-composite
+-decorator
+-facade
+-flyweight
+-proxy
+
+1)JAVA PURO/VANILLA
+A)SINGLETON 
+padrão criacional 
+permite a criação de uma única instância de uma classe e fornecer um modo para recuperá-la
+
+B)STRATEGY 
+padrão comportamental 
+simplificar a variação de algoritmos para a resolução de um mesmo problema, a partir de uma mesma interface
+
+C)FACADE 
+padrão estrutural
+prover uma interface que reduza a complexidade nas integrações com subsistemas
+
+2)JAVA COM SPRING 
+A)Singleton: @Bean e @Autowired
+relação forte com inversão de controle e injeção de dependência
+beans são instâncias de classe java, objetos que o java está gerenciando em termos de memória
+autowired é sempre entregue como singleton para otimizar a aplicação
+
+B)Strategy: @Service e @Repository 
+
+C)Facade: 
+construiremos uma API Rest com o mesmo objetivo desse padrão
+abstrair  a complexidade das seguintes integrações: Spring Data JPA e ViaCep(Feign)
+Spring Data JPA em memória, usando o h2
+
+DESAFIO DE PROJETO 
+crie uma solução que explore o conceito de Padrões de Projeto na prática.
+Para isso, você pode reproduzir um dos projetos que criamos durante as aulas ou desenvolver uma nova ideia do zero
+

@@ -1,0 +1,332 @@
+PROTOCOLO HTTP
+HyperText Transfer Protocol 
+definido pelos RFCs 1945 e 2116
+Protocolo de comunicação: rege e estrutura as mensagens
+Browser -> implementa o cliente HTTP 
+Servidor -> hospeda objetos web(tudo que compõe a página e a página em si)
+Cliente envia mensagens HTTP Request (objetos HTTP)
+Servidor responde com mensagens HTTP Response (TCP)
+TCP: protocolo de transporte, que opera de duas maneiras:
+1)conexão persistente
+a conexão é mantida após estabelecida até que haja um pedido específico de finalização da sessão
+2)conexão não-persistente
+a conexão é encerrada a cada envio de mensagens
+
+HTTP é um protocolo stateless, sem estado
+o servidor não armazena o estado do cliente, não sabe se o cliente está enviando a requisição mais de uma vez
+
+Tipos de Mensagens HTTP: 
+1)Request
+realizada pelo cliente 
+Texto em ASCII
+dois tipos de linha:
+a) request line
+contém o método HTTP sendo utilizado e a versão do protocolo 
+b)header line 
+URL onde estão hospedados os dados 
+tipo de conexão 
+agente que realizou o request 
+preferência de linguagem do cliente (quando ausente, envia linguagem padrão (inglês?))
+
+Entity body
+campo da mensagem request HTTP
+não utilizada pelo get, mas pelo método post
+em 90% dos casos, o cliente utiliza método get 
+
+Métodos:
+-GET: solicita um recurso do servidor
+-HEAD: GET sem corpo de resposta (usado quando precisa solicitar metadados de um recurso)
+-POST: submete uma entidade a um recurso
+-PUT: substituição de recursos pelos dados da requisição
+-DELETE: remoção de um recurso
+-TRACE: chamada de loop-back a um determinado recurso (verifica a cadeia de requerimento, usado para diagnósticos e testes) 
+-OPTION: opções de comunicação com recurso (configuração do recurso)
+-CONNECT: tunelamento identificado pelo recurso 
+-PATCH: modificação parcial (RFC 5789)
+
+Métodos seguros: GET, HEAD E OPTION 
+não acarretam alteração de estado dentro do servidor
+
+
+2)Response 
+realizada pelo servidor 
+a)Status Line (1a linha)
+versão do protocolo
+status code 
+status da mensagem 
+
+b)Header Lines 
+conexão
+dados da mensagem:
+-data
+-servidor 
+-last modified 
+-tamanho da mensagem 
+Content-type: tipo da mensagem
+
+C)Entity Body 
+É onde está presente o metodo get
+
+Status Code:
+-200 OK: request bem sucedida e objeto enviado 
+-301 Moved Permanently: objeto realocado nova URL no campo Location
+-400 Bad Request: resposta genérica de erro- servidor não entendeu a mensagem 
+-404 Not Found: o documento solicitado não existe
+-505 HTTP Version not Supported: versão do protocolo não suportada pelo servidor 
+
+COOKIES
+RFC 6265
+Rastreamento
+Identificação: Restrição ou fornecimento de função
+utilizado para publicidade
+Componentes:
+1)Cookie header line 
+composto por:
+-response message 
+-request message 
+2)Cookie file 
+mantido no cliente e servidor
+gerenciado pelo browser 
+3)Banco de Dados Back-end 
+Web site
+
+CONCEITOS BÁSICOS DE SEGURANÇA
+1)CRIPTOGRAFIA POR CHAVE
+torna ilegíveis as informações de um arquivo, misturando os dados
+A)Assimétrica
+-chave privada
+assinatura - criptografia 
+-chave pública
+verificação de autenticidade
+
+B)Simétrica
+Chave Única Privada 
+conhecimento prévio da chave 
+como transferir a chave
+//K)Cifra de César 
+//substituição da letra pela k-ésima letra do alfabeto
+//rotatividade do alfabeto 
+- Cifra de fluxo
+sequência de bits pseudo-aleatório
+bits de entrada -> fluxo de bits -> dados cifrados
+mapeamento 1 para 1
+- Cifra de bloco
+blocos de bits
+(mapeamento 1 para 1???)
+mapeamento por permutação
+mapeamento por funções que simulam a permutação por blocos
+SSL, PGP, Ipsec
+protocolos que utilizam esse tipo de cifra: DES, AES e 3DES
+
+Certificação de Chave Pública 
+certificar uma chave: comprovar autenticidade
+entidades certificadoras:
+-verificação de identidade 
+-emissão de certificados 
+
+Padrões de Autoridades Certificadoras 
+-IETF - recomendação ITUX.509
+especificação de um serviço de autenticação e sintaxe de certificados 
+-RFC 1422
+gerenciamento de chaves baseado em CA para emails seguros
+CA = Certification Authority
+
+PROTOCOLO SSL 
+Secure Socket Layer 
+segurança para conexões TCP 
+confidencialidade - garantir que não haja leitura dos dados 
+integridade - garantir que não haja edição dos dados
+autenticidade end-point - garantir que os dois lados da conexão são quem dizem ser 
+Versão 3: Transport Layer Security (TLS) - RFC4346
+Fases da Operação SSL:
+a)HandShake
+estabelecer conexão TCP: 
+TCP starts -> TCP response -> TCP confirmation ->
+verificação de autenticidade:
+SSL Hello -> Certification(com chave pública) ->
+Envio da Master Secret Key:
+EMS (EMS + Chave)-> 
+apenas os dois lados da conexão conhecem o segredo
+b)Key Derivation
+derivação a partir do Master Secret
+são criadas 2 chaves para cada lado da conexão 
+1 Session Encription Key para cada (SEK)
+1 verificação da chave MS para cada (Mac)
+c)Data Transfer 
+transferência efetiva de dados 
+Record+Mac(verificador) 
+verificação de integridade da mensagem 
+Data Stream = record + mac ... record + mac 
+
+
+HTTPS
+é um protocolo HTTP que utiliza proteção SSL funcionando sobre o TCP 
+segurança na comunicação HTTP 
+Over TCP 
+verificação da autenticidade por certificados digitais
+porta 443
+maioria dos sites utilizam a versão segura 
+proposta de valor: privadidade e proteção contra fishing
+
+LGPD - Lei Geral de Proteção de Dados (13.709/2018)
+promulgada em 2018
+entrou em vigor em agosto de 2020
+lei de segurança de informação 
+baseada na GDPR - general data protection regulation (UE)
+baseada na legislação do estado da California-EUA 
+protege:
+-dados de Identificação dos usuários 
+-dados sensíveis (religião, etnia)
+define o tratamento de dados 
+livre consentimento
+direitos do titular das informações 
+sanções aos que descumprirem as regras
+empresas que precisam manter um BD (funcionários e usuários) devem garantir ao titular sigilo das informações 
+criação da Agencia Nacional de Proteção de Dados(ANPD)
+ANPD:
+zelar pela proteção dos dados
+elaboração de diretrizes para política nacional de proteção
+promover conhecimento das normas
+editar regulamentos 
+realizar auditorias
+
+
+API - APPLICATION PROGRAMMING INTERFACE 
+coleção de métodos disponibilizados por um serviço para interação direta 
+realiza a mediação das transações web 
+rotinas e padrões 
+acesso: sistema ou plataforma web 
+utilização dos serviços da empresa 
+API em JAVA 
+recursos disponíveis em uma API padrão Java 
+programas de suporte 
+possui partes funcionais chamadas pacotes(bibliotecas)
+ex: java.io, java.applet, java.security, java.math 
+
+Propriedades/Características de API
+1)Acesso de Dados 
+acesso aos dados de sites ou servidores
+2)Esconder Complexidade 
+execução de operações complexas - rotinas e funções 
+comandos específicos de acesso aos dados
+transparência de comandos hardware e funções específicas do sistema 
+intermedio de execução
+dev - foco na funcionalidade do sistema
+3)Estender Funcionalidades 
+comunicação entre software e hardware
+comunicação entre aplicativos 
+4)Segurança 
+
+Padrão REST 
+arquitetura que define regras para a comunicação entre APIs e Sistemas 
+conversa bem com o HTTP 
+REST- REpresentational State Transfer
+apresentadou por Roy Fielding em 2000
+boas práticas - regras bem definidas 
+comunicação entre sistemas 
+padrão de linguagem 
+Vantagens da padronização:
+maior compreensão
+redução do esforço 
+ganho em agilidade e eficiência
+migração de sistemas
+Vantagem: independência da aplicação em caso de migração de sistemas, por exemplo, de um modelo de banco de dados para outro  
+Constrains do Modelo Rest:
+-client-server 
+separação entre front e back 
+princípio da separação 
+menos complexidade 
+organização dos devs 
+portabilidade da interface do usuário 
+aumento da escalabilidade
+simplifica os componentes dos servidores 
+ganho em agilidade e em escrita de código
+-stateless
+Request - requisição deve fornecer completo entendimento para o servidor
+visibilidade
+confiabilidade
+escalabilidade
+tradeoff: repetição de dados (diminuir performance da rede), per-interaction overhead(sobrecarga por interação)
+tradeoff: performance da rede X propriedades do REST
+-cache 
+objetivo: aumentar a eficiência da rede -> contrapor o tradeoff do stateless 
+label requests: cacheable or noncacheable 
+reduz a latência e interação 
+-Uniform Interface 
+diferencial: ênfase de uma interface uniforme entre componentes 
+generalidade: princípio de engenharia de software 
+arquitetura de múltiplas restrições: 
+identificação de recursos
+manipulação de recursos  - representações - ex: verbos HTTP
+auto-descrição - processamento da informação
+Hypermedia As The Engine Of Application State(HATEOAS)
+ex: métodos HTTPS 
+Aspecto chave: estado e elementos de dados
+-Layered System 
+composição hierárquica de camadas:
+encapsulamento 
+proteção de dados 
+tradeoff: aumenta latência e overhead de dados 
+tradeoff é compensado pelo uso de cache
+-Code on Demand(opcional)
+funcionalidade de clientes -> applets ou scripts 
+simplificação:
+redução de features a serem pré-implementadas 
+sistema extensível x diminuição de visibilidade
+
+APIs Restfull
+utilizado pq:
+padrão comumente adotado 
+conversa bem com o protocolo HTTP 
+permite criação de APIs mais eficientes 
+foco no desenvolvimento 
+
+API HTTP JAVA 
+adicionado na versão 11
+suporte a HTTP/1.1 e HTTP/2.0 
+requisições síncrona e assíncrona
+Pacote HTTP (java.net.http)
+-HttpClient
+classe que define o cliente HTTP
+.newHttpClient() -> cria um novo cliente http -> é imutável
+.newBuilder() -> responsável pela configuração do cliente, define estado e configurações do cliente -> versão do protocolo, autenticador, timeout
+    .version(versão do cliente HTTP)
+    .connectTimeout(duração até timeout)
+    .build()
+-HttpRequest
+classe de solicitações e utilização de métodos 
+métodos get, post etc.
+criado a partir do builder 
+métodos que definem os parâmetros de configuração
+URI, Método, Timeout, header, body, build()
+assim como o cliente, uma vez que é citada é imutável 
+Header: charset:utf-8, text/html, application/json
+Timeout: of.minutes(), of.seconds(), .of.nanoseconds()
+criado a partir do builder 
+métodos que definem os parâmetros de configuração
+-HttpResponse
+resultado da solicitação HTTP
+HttpClient.send()
+classe criada indiretamente
+retornado como resultado do envio de uma requisição do cliente
+pode ser síncrona ou assíncrona 
+BodyHandelers.ofString: trata os bytes da resposta HTTP 
+
+
+GERAL 
+evitar fishing e manter privacidade do usuário
+SSL é o protocolo de segurança utilizado na versão segura do HTTP 
+CA ou Entidades certificadoras garantem a autenticidade das chaves de outras entidades 
+200OK - solicitação Request bem sucedida no método GET 
+Padrão Rest e HTTP: baseados em arquiteturas do tipo cliente-servidor 
+GET é método seguro 
+HTTP é um protocolo com duas versões
+servidor não mantém o estado do cliente. Um reenvio de uma requisição será respondida pelo servidor normalmente 
+API: Realiza o intermédio entre sistemas ou usuário/sistema. A utilização de APIs facilita o desenvolvimento de programas e permite ao dev focar na funcionalidade do app.
+independência da aplicação: vantagem do padrão REST atrelada à simplificação do desenvolvimento de um programa pelo DEV. Essa característica restringe as funcionalidades desenvolvidas ao lado do cliente, permitindo sua reutilização em outros sistemas similares
+
+
+
+
+
+
