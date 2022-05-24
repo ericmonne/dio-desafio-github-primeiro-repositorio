@@ -19,7 +19,7 @@ favorece dois aspectos de um sistema: manutenção e evolução
 tem relação com getters/setters, mas é mais do que isso 
 
 Herança
-Permite que define subclasse que herda/reutiliza/estende/modifica o comportamento da superclasse
+Permite que se defina que subclasse que herda/reutiliza/estende/modifica o comportamento da superclasse
 superclasse/classe base - subclasse/classe derivada
 DRY - Don't Repeat Yourself
 

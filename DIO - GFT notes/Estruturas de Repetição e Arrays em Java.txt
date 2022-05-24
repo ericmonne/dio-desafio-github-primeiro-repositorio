@@ -5,7 +5,6 @@ permite que uma sequência de comandos seja executada repetidamente, caso determ
 Tipos:
 1)Repetição com teste no início
 - while
-
 2)Repetição com teste no final
 - do while
 3)Repetição contada

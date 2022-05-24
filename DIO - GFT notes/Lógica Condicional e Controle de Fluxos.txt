@@ -5,7 +5,8 @@ Tipos:
 -tamanho: maior, menor, maior igual, menor igual
 
 OPERADORES LÓGICOS
-símbolso especiais capazes de realizar comparações lógicas entre operandos lógicos ou expressões e, em seguida, retornar um resultado 
+símbolso especiais capazes de realizar comparações lógicas entre operandos lógicos ou expressões 
+e, em seguida, retornar um resultado 
 operadores lógicos são os booleanos (true ou false)
 Tipos:
 1)conjunção
@@ -34,14 +35,14 @@ CONTROLE DE FLUXO
 estruturas que têm a capacidade de direcionar o fluxo de execução do código
 Tipos:
 1)Decisão
-estrutura que avalia uma condição booleana(lógica) ou variável para direcionr o fluxo de execução
+estrutura que avalia uma condição booleana(lógica) ou variável para direcionar o fluxo de execução
 -if (não suporta expressões aritméticas?????)
 {} -> são opcionais em if de uma linha
 -if-else
 -if-else-if
 -switch (tipos mais comuns são int, Enum e String)
--operador ternários -> deve ser evitado ao máximo, por uma questão de boa prática. Dificulta a legibilidade
-boas práticas:
+-operador ternário -> deve ser evitado ao máximo, por uma questão de boa prática. Dificulta a legibilidade
+Boas Práticas:
 switch é para valores exatos (nao avalia booleanos) e if para expressões booleanas
 evitar usar o default do switch para "cases genéricos", e sim para valores inválidos, afim de evitar comportamentos inesperados
 evitar o efeito "flecha" dos if

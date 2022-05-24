@@ -66,5 +66,4 @@ quando vc gera commits no seu repositório local com email e name diferentes dos
 os commits aparecerão com email e name diferentes no github
 
 
-
 Markdown é uma forma humanizada de escrever HTML sem escrever HTML de fato

@@ -12,7 +12,7 @@ compila apenas uma vez, em .class, para qualquer sistema operacional, e as JVMs 
 responsável por:
 - execução das pilhas
 - gerenciamento e execução de memória
--gerenciamento e execução das threads
+- gerenciamento e execução das threads
 - otimização de código (compilação JIT - Just In Time)
 - Garbage Collector (GC) - responsável por limpar a memória "suja" oriunda do processo de alocação e desalocação da memória RAM
 
@@ -84,7 +84,6 @@ Sobrecarga
 é a capacidade de definir métodos para diferentes contextos, mas preservando seu nome
 alterar os parâmetros do método
 quanto mais complexa a aplicação, maior a necessidade de sobrecargas
-
 
 Retorno 
 é uma instrução de interrupção

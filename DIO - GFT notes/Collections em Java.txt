@@ -17,6 +17,7 @@ LISTAS
 interface list fica dentro do pacote java.util.List
 permite elementos duplicados
 garante ordem de inserção
+
 A)Vector
 tem a ver com threads
 
@@ -35,7 +36,7 @@ implementa 2 interfaces: list e queue
 
 ARRAYLIST 
 List<Tipo> nome = new ArrayList<>();
-ArrayList<Tipo> nome = new ArrayList<>(); --> não é recomendado em geral, pq não se dirige para a interface assim, mas para a implementaçãi
+ArrayList<Tipo> nome = new ArrayList<>(); --> não é recomendado em geral, pq não se dirige para a interface assim, mas para a implementação, reduzindo o leque de possibilidades
 List<Tipo> nome = new ArrayList<>(Arrays.asList(dado, dado2, dado3))
 List<Tipo> nome = Arrays.asList(dado, dado1, dado2, dado3); -> adicionar elementos na instanciação da lista, mas não permite adicionar ou retirar elementos dentro dela --> erro de compilação
 List<Tipo> nome = List.of(dado, dado1, dado2); --> também torna a lista imutável, não permitindo adicionar ou remover --> a propria IDE avisa do erro 
@@ -207,11 +208,11 @@ meusGatos.sort(Comparator.comparing(new Function<Gato, String(){
     }
 }));
 ex: com lambda:
-meus gatos.sort(Comparator.comparing((Gato gato) -> gato.getNome()))
+meusGatos.sort(Comparator.comparing((Gato gato) -> gato.getNome()))
 
 D)Reference Method 
 recurso que permite fazer a referência a um método ou construtor de uma classe(de forma funcional)
-e assim inficar que ele deve ser utilizado num ponto específico do código
+e assim indicar que ele deve ser utilizado num ponto específico do código
 deixando-o mais simples e legível
 para utilizá-lo: informar uma classe ou referência seguido de "::" e o nome do método sem parênteses no final 
 é uma forma de simplificar uma expressão lambda 

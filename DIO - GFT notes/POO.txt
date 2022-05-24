@@ -48,7 +48,7 @@ contexto deve ser considerado
 é o elemento de uma classe responsável por definir sua estrutura de dados
 o conjunto de atributos será responsável por representar suas características e fará parte dos objetos criados a partir da classe
 não existe na PE
-Atributo: o que é próprio e peculiar  alguém ou a alguma coisa
+Atributo: o que é próprio e peculiar a alguém ou a alguma coisa
 é criado dentro da classe
 Variável: sujeito a variações ou mudanças, que pode variar, inconstante, instável
 existe na POO dentro de métodos
@@ -78,6 +78,7 @@ Dicas:
 verbos
 nomes significativos
 contexto deve ser considerado
+
 Métodos Especiais: (2)
 1 - Construtor
 constrói objetos 
@@ -87,6 +88,7 @@ class Nome { void finalize()}
 auxilia a destruição do objeto (coletor de lixo)
 é uma boa prática
 ser feito se precisar liberar algum recurso que o objeto possa estar usando, se não, não precisa do destrutor 
+
 Sobrecarga: mudar a assinatura(no caso só o parâmetro) do método de acordo com a necessidade 
 sobrecarga não existe em Python(interpretada e dinâmica X compilada e estática (c# e java))
 
@@ -101,7 +103,7 @@ ocorre quano uma requisição(chamada) a esse método é realizada, disparando a
 pode ser direcionada diretamente à classe caso a requisição seja a um método estático
 Criação:
 Carro carro = new Carro(); (criação do objeto)
-carro.método;
+carro.método();
 
 Instância x Estático: duas formas em que os métodos podem se comportar 
 
@@ -112,7 +114,7 @@ Conceitos que ajudam a criar entidades a partir de outras entidades
 1)Herança
 relacionamento entre classes em que uma subclasse(filha, derivada) é uma extensão de uma superclasse(pai,mãe,base)
 devido a isto, a subclasse consegue reaproveitar os atributos e métodos da superclasse 
-além dos que venham a ser herdados, a subclasse pode definir eus próprios membros
+além dos que venham a ser herdados, a subclasse pode definir seus próprios membros
 serve para criar subtipos
 ajuda no reuso, mas é possível reuso sem herança
 Criação
@@ -164,7 +166,7 @@ Associação: uma coisa usa a outra
 
 3)Interface 
 define um contrato que deve ser seguido pela classe que a implementa
-quando uma classe implementa uma interface, ela se compromete a realziar todos os comportamentos que a interface disponibiliza 
+quando uma classe implementa uma interface, ela se compromete a realizar todos os comportamentos que a interface disponibiliza 
 seus métodos não possuem corpo
 Criação
 Java: class B implements A {}
@@ -189,10 +191,9 @@ __init__.py -> é preciso esse arquivo até as versões 2.x para o python identi
 from...
 import...
 
-
 2)VISIBILIDADES 
 modificadores de acesso
-têm como finalidade determinar até que passe uma classe, atributo ou método pode ser usado 
+têm como finalidade determinar até que passo uma classe, atributo ou método pode ser usado 
 sua utilização é fundamental para o uso efetivo da OO 
 algumas boas práticas e conceitos só são atingidos com o uso correto deles
 Tipos:

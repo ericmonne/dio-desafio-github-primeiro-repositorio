@@ -5,7 +5,8 @@ utilizados para manipular dados nas estruturas de várias formas
 ex: inserir, excluir, procurar e ordenar dados
 
 ESTRUTURA DE DADOS
-é uma estrutura organizada de dados na memória de um dispositivo de armazenamento, de forma que os dados possam ser utilizados de forma correta
+é uma estrutura organizada de dados na memória de um dispositivo de armazenamento, 
+de forma que os dados possam ser utilizados de forma correta
 
 Principais Estruturas de Dados 
 vetores e matrizes(arrays)
